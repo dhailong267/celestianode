@@ -24,11 +24,6 @@ Scripts that I use to build a dashboard
 - Cosmos-based Chain Validator Dashboard (my own dashboard)
 
 ## How to run
-### Automatic installation
-```
-bash <(curl -s https://raw.githubusercontent.com/nodejumper-org/monitoring-tool/main/utils/install.sh)
-```
-
 ### Manual installation
 1. Install docker
 ```
@@ -57,3 +52,7 @@ sudo docker compose up -d
 
 4. Open in browser http://<your_server_ip>:3000 <br>
 default credentials: admin/admin
+
+## Link to view the Dashboard
+### http://118.71.64.184:3000/d/rYdddlPWk/celestia-analyst?orgId=1&refresh=1m&from=now-1h&to=now
+Account login : viewer/viewer 
