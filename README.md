@@ -5,7 +5,7 @@
 ![Celestia Analyst Screenshot](/images/Analyst%20screenshot.jpg "Celestia Analyst Screenshot")
 
 ## Quick Start
-Scripts that I use
+Scripts that I use to build a dashboard
 ### monitoring-tool
 
 > A powerful and easy-to-use monitoring tool for server hardware and validator nodes with alerts via telegram bot and grafana dashboards
@@ -22,19 +22,6 @@ Scripts that I use
 - [Node Exporter Full dashboard](https://github.com/rfrail3/grafana-dashboards)
 - [Node Exporter for Prometheus Dashboard EN](https://github.com/starsliao/Prometheus/tree/master/node_exporter)
 - Cosmos-based Chain Validator Dashboard (my own dashboard)
-
-### Alerts
-#### Server alerts
-- Server down
-- Out of memory (<10%)
-- Out of disk space (<10%)
-- Out of disk space within 24h
-- High CPU load (>85%)
-
-#### Cosmos-based validator node alerts
-- Missing blocks
-- Degraded syncing (sync less than 40 blocks in last 5 min)
-- Low peers count (<5)
 
 ## How to run
 ### Automatic installation
