@@ -2,7 +2,7 @@
 # Perform analysis of node
 
 
-![Celestia Analyst Screenshot](/images/Analyst screenshot.jpg "Celestia Analyst Screenshot")
+![Celestia Analyst Screenshot](/images/Analyst%20screenshot.jpg "Celestia Analyst Screenshot")
 
 ## Quick Start
 
