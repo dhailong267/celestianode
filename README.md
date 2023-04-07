@@ -1,9 +1,6 @@
 
 # Perform analysis of node
 
-
-![Celestia Analyst Screenshot](/images/Analyst%20screenshot.jpg "Celestia Analyst Screenshot")
-
 ## Quick Start
 Scripts that I use to build a dashboard
 ### monitoring-tool
@@ -104,3 +101,12 @@ Here are the specific metrics and corresponding values extracted from the JSON f
 - System uptime: "uptime": {"value": 605661, "unit": "s"}
 
 Note that the list of units and scales in the units may vary depending on the system configuration of the monitoring tools.
+
+## Overview Node Exporter Full
+![image](https://user-images.githubusercontent.com/83217500/230565198-9b76ae9f-9d61-4b60-8312-f141b04aae95.png)
+![image](https://user-images.githubusercontent.com/83217500/230565285-f8e233b4-5030-4935-b79d-4432edf7ee08.png)
+![image](https://user-images.githubusercontent.com/83217500/230565405-7e775e89-b507-427e-a7d7-09b9b5b0bcee.png)
+![image](https://user-images.githubusercontent.com/83217500/230565502-4c05448f-6e58-48b9-b671-00314959b0f2.png)
+![image](https://user-images.githubusercontent.com/83217500/230565875-6a19cf19-7daa-43a5-a2b1-c6d740f69983.png)
+
+
