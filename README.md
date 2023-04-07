@@ -54,5 +54,20 @@ sudo docker compose up -d
 default credentials: admin/admin
 
 ## Link to view the Dashboard
-### http://118.71.64.184:3000/d/rYdddlPWk/celestia-analyst?orgId=1&refresh=1m&from=now-1h&to=now
-Account login : viewer/viewer 
+### https://snapshots.raintank.io/dashboard/snapshot/SpFP01am4kSqELpUeR7sfoK7pO5aGbeE
+
+Server Resource Overview
+
+1. CPU usage: 80 active, 20 idle; %CPU used 30
+2. Memory usage: 50% used
+3. Disk space: 38% used
+4. Load average: 1min=0.76, 5min=0.72, 15min=0.68
+5. Network usage: Receive: 1.5Gbps, Transmit: 1.2Gbps
+
+Resource Detail
+
+1. CPU usage: The average CPU usage is around 30%
+2. Memory usage: The server has a total of 8GB RAM installed and approximately 4GB is used. RAM usage is split among active processes but the majority of RAM is used by the two processes: "grafana" and "telegraf".
+3. Disk usage: The server has a 30GB disk and around 38% of it is used. Disk usage is mostly by "/var/lib/grafana" which occupies approximately 23GB out of 30GB.
+4. Load average: The load average for 1min, 5min and 15min is less than 1, indicating that the server is not overworked and can handle additional loads without hiccups.
+5. Network usage: The server is receiving data at the rate of 1.5Gbps and transmitting data at the rate of 1.2Gbps
