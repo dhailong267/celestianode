@@ -77,6 +77,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:24017\"
 ```
 
 ### Create Service
+```
 sudo tee /etc/systemd/system/hedged.service > /dev/null <<EOF
 [Unit]
 Description=hedged Daemon
