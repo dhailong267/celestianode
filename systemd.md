@@ -25,17 +25,13 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```
 
 ### Build binary
-```
 cd $HOME
-
 sudo mkdir -p $HOME/go/bin/
 chmod 777 /root/go/bin/hedged
 sudo wget -O hedged https://github.com/hedgeblock/testnets/releases/download/v0.1.0/hedged_linux_amd64_v0.1.0
 chmod +x hedged
 mv hedged $HOME/go/bin/
 hedged version
-
-
 ```
 ### Initialize Node
 Replace `Name` with your own moniker
