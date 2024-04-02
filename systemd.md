@@ -27,43 +27,16 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ### Build binary
 ```
 cd $HOME
-wget -O hedged https://github.com/hedgeblock/testnets/releases/download/v0.1.0/hedged_linux_amd64_v0.1.0
-sudo chmod +x hedged
-sudo wget -O /usr/lib/libwasmvm.x86_64.so https://github.com/CosmWasm/wasmvm/releases/download/v1.3.0/libwasmvm.x86_64.so
-mkdir -p $HOME/.hedge/cosmovisor/genesis/bin
-mv hedged $HOME/.hedge/cosmovisor/genesis/bin/
-sudo ln -s $HOME/.hedge/cosmovisor/genesis $HOME/.hedge/cosmovisor/current -f
-sudo ln -s $HOME/.hedge/cosmovisor/current/bin/hedged /usr/local/bin/hedged -f
-```
 
-### Cosmovisor Setup
-```
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-```
-```
-sudo tee /etc/systemd/system/hedge.service > /dev/null << EOF
-[Unit]
-Description=hedge node service
-After=network-online.target
- 
-[Service]
-User=$USER
-ExecStart=$(which cosmovisor) run start
-Restart=on-failure
-RestartSec=10
-LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.hedge"
-Environment="DAEMON_NAME=hedged"
-Environment="UNSAFE_SKIP_BACKUP=true"
-Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/.hedge/cosmovisor/current/bin"
- 
-[Install]
-WantedBy=multi-user.target
-EOF
-sudo systemctl daemon-reload
-sudo systemctl enable hedge
-```
+sudo mkdir -p $HOME/go/bin/
+chmod 777 /root/go/bin/hedged
+sudo wget -O hedged https://github.com/hedgeblock/testnets/releases/download/v0.1.0/hedged_linux_amd64_v0.1.0
+chmod +x hedged
+mv hedged $HOME/go/bin/
+hedged version
 
+
+```
 ### Initialize Node
 Replace `Name` with your own moniker
 ```
@@ -107,7 +80,23 @@ sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:24017\"%; s%^address = \":8080\"%address = \":24080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:24090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:24091\"%; s%:8545%:24045%; s%:8546%:24046%; s%:6065%:24065%" $HOME/.hedge/config/app.toml
 ```
 
-
+### Create Service
+sudo tee /etc/systemd/system/hedged.service > /dev/null <<EOF
+[Unit]
+Description=hedged Daemon
+After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which hedged) start
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable hedged
+```
 ### Snapshot
 ```
 cp $HOME/.hedge/data/priv_validator_state.json $HOME/.hedge/priv_validator_state.json.backup
